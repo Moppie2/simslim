@@ -6,73 +6,109 @@
 <title>SimSlim – Goedkope data voor backpackers</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Segoe UI',sans-serif;background:#0d0d0d;color:#f0f0f0;line-height:1.6}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f7f9f8;color:#1a2e28;line-height:1.6}
   a{color:inherit;text-decoration:none}
-  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:#0d0d0d}
-  .tag{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;font-size:13px;padding:6px 16px;border-radius:999px;margin-bottom:1.5rem;display:inline-block}
-  h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;line-height:1.15;max-width:700px;margin-bottom:1rem}
-  h1 span{color:#00d084}
-  .sub{font-size:1.1rem;color:#aaa;max-width:480px;margin:0 auto 2rem}
-  .cta{display:inline-block;background:#00d084;color:#000;font-weight:700;font-size:1rem;padding:16px 36px;border-radius:999px;transition:opacity .2s}
-  .cta:hover{opacity:.85}
-  .note{font-size:12px;color:#555;margin-top:12px}
-  .stats{display:flex;gap:2rem;justify-content:center;margin-top:3rem;flex-wrap:wrap}
-  .stat{text-align:center}
-  .stat-n{font-size:1.8rem;font-weight:700;color:#00d084}
-  .stat-l{font-size:12px;color:#666;margin-top:2px}
-  section{padding:5rem 1.5rem;max-width:860px;margin:0 auto}
-  .sec-title{font-size:1.8rem;font-weight:700;margin-bottom:2.5rem;text-align:center}
-  .sec-title span{color:#00d084}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-  .card{background:#141414;border:1px solid #222;border-radius:16px;padding:1.5rem}
-  .card-icon{font-size:2rem;margin-bottom:.75rem}
-  .card h3{font-size:1rem;font-weight:600;margin-bottom:.5rem}
-  .card p{font-size:.9rem;color:#888;line-height:1.5}
-  .steps{display:flex;flex-direction:column;gap:1.5rem}
-  .step{display:flex;gap:1rem;align-items:flex-start}
-  .step-n{background:#00d084;color:#000;font-weight:700;font-size:.9rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-  .step-body h3{font-size:1rem;font-weight:600;margin-bottom:4px}
-  .step-body p{font-size:.9rem;color:#888}
-  .vs{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-  .vs-col{background:#141414;border:1px solid #222;border-radius:16px;padding:1.5rem}
-  .vs-col.bad{opacity:.6}
-  .vs-col h3{font-size:.95rem;font-weight:600;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid #222}
-  .vs-col li{font-size:.875rem;color:#888;list-style:none;padding:4px 0;padding-left:1.2rem;position:relative}
-  .vs-col li::before{content:"✓";position:absolute;left:0;color:#00d084}
-  .vs-col.bad li::before{content:"✗";color:#e05555}
-  .cta-section{text-align:center;padding:5rem 1.5rem;background:#0a0a0a}
-  .cta-section h2{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;margin-bottom:1rem}
-  footer{text-align:center;padding:2rem;font-size:12px;color:#444;border-top:1px solid #1a1a1a}
+
+  nav{background:#fff;border-bottom:1px solid #e0ede8;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-weight:700;font-size:1.2rem;color:#00b87a}
+  .nav-cta{background:#00b87a;color:#fff;font-weight:600;font-size:14px;padding:10px 22px;border-radius:8px}
+  .nav-cta:hover{background:#009e6a}
+
+  .hero{background:#fff;padding:5rem 1.5rem 4rem;text-align:center}
+  .hero-tag{display:inline-block;background:#e6f7f1;color:#00895a;font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;margin-bottom:1.5rem}
+  h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.2;max-width:640px;margin:0 auto 1rem;color:#0f2920}
+  h1 span{color:#00b87a}
+  .hero-sub{font-size:1.1rem;color:#4a6b5e;max-width:480px;margin:0 auto 2rem}
+  .cta-main{display:inline-block;background:#00b87a;color:#fff;font-weight:700;font-size:1rem;padding:16px 40px;border-radius:10px;transition:background .2s}
+  .cta-main:hover{background:#009e6a}
+  .cta-note{font-size:12px;color:#7a9e91;margin-top:10px}
+
+  .stats{display:flex;gap:0;justify-content:center;margin:3rem auto 0;max-width:640px;background:#f0faf5;border-radius:14px;border:1px solid #cdeede;overflow:hidden;flex-wrap:wrap}
+  .stat{flex:1;min-width:120px;padding:1.2rem 1rem;text-align:center;border-right:1px solid #cdeede}
+  .stat:last-child{border-right:none}
+  .stat-n{font-size:1.6rem;font-weight:800;color:#00b87a}
+  .stat-l{font-size:11px;color:#4a6b5e;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+
+  section{padding:4rem 1.5rem;max-width:860px;margin:0 auto}
+  .sec-label{font-size:12px;font-weight:700;color:#00b87a;text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem;text-align:center}
+  .sec-title{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;text-align:center;color:#0f2920}
+  .sec-sub{text-align:center;color:#4a6b5e;font-size:.95rem;margin-bottom:2.5rem}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+  .card{background:#fff;border:1px solid #ddeee7;border-radius:14px;padding:1.5rem}
+  .card-icon{width:40px;height:40px;background:#e6f7f1;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.2rem}
+  .card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#0f2920}
+  .card p{font-size:.875rem;color:#4a6b5e;line-height:1.5}
+
+  .steps-wrap{background:#fff;border-radius:16px;border:1px solid #ddeee7;padding:2rem}
+  .step{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid #f0f7f4}
+  .step:last-child{border-bottom:none;padding-bottom:0}
+  .step-n{background:#00b87a;color:#fff;font-weight:800;font-size:.875rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .step h3{font-size:.95rem;font-weight:700;margin-bottom:3px;color:#0f2920}
+  .step p{font-size:.875rem;color:#4a6b5e}
+
+  .vs-section{background:#f7f9f8;padding:4rem 1.5rem}
+  .vs-inner{max-width:720px;margin:0 auto}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+  .vs-col{background:#fff;border:1px solid #ddeee7;border-radius:14px;padding:1.5rem}
+  .vs-col.good{border-color:#00b87a;border-width:2px}
+  .vs-col h3{font-size:.95rem;font-weight:700;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid #f0f7f4;color:#0f2920}
+  .vs-col li{font-size:.875rem;color:#4a6b5e;list-style:none;padding:5px 0;padding-left:1.4rem;position:relative}
+  .vs-col.good li::before{content:"✓";position:absolute;left:0;color:#00b87a;font-weight:700}
+  .vs-col.bad li::before{content:"✗";position:absolute;left:0;color:#e05555}
+  .vs-col.bad li{color:#9ab0a8}
+
+  .cta-section{background:#00b87a;padding:5rem 1.5rem;text-align:center}
+  .cta-section h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;color:#fff;margin-bottom:.75rem}
+  .cta-section p{color:#b3ede0;margin-bottom:2rem;font-size:1rem}
+  .cta-white{display:inline-block;background:#fff;color:#00b87a;font-weight:700;font-size:1rem;padding:16px 40px;border-radius:10px;transition:opacity .2s}
+  .cta-white:hover{opacity:.9}
+  .cta-section-note{font-size:12px;color:#b3ede0;margin-top:10px}
+
+  footer{background:#fff;border-top:1px solid #e0ede8;padding:2rem 1.5rem;text-align:center;font-size:12px;color:#7a9e91}
+  footer a{color:#00b87a}
+
+  @media(max-width:480px){
+    .vs{grid-template-columns:1fr}
+    nav .nav-cta{display:none}
+  }
 </style>
 </head>
 <body>
 
+<nav>
+  <span class="nav-logo">SimSlim</span>
+  <a class="nav-cta" href="https://breezesim.com?sca_ref=10983613.HTJ7KGVIfO" target="_blank">Bekijk plannen</a>
+</nav>
+
 <div class="hero">
-  <span class="tag">Voor Nederlandse backpackers</span>
+  <span class="hero-tag">Voor Nederlandse backpackers</span>
   <h1>Stop met betalen voor <span>dure roaming</span></h1>
-  <p class="sub">Activeer data in 190+ landen in 2 minuten. Geen fysieke SIM. Geen gedoe op het vliegveld. Gewoon internet.</p>
-  <a class="cta" href="https://breezesim.com?sca_ref=10983613.HTJ7KGVIfO" target="_blank">Bekijk eSIM plannen →</a>
-  <p class="note">Gratis activatie · Werkt op iPhone & Android · Direct actief</p>
+  <p class="hero-sub">Activeer data in 190+ landen in 2 minuten. Geen fysieke SIM. Geen gedoe op het vliegveld.</p>
+  <a class="cta-main" href="https://breezesim.com?sca_ref=10983613.HTJ7KGVIfO" target="_blank">Bekijk eSIM plannen →</a>
+  <p class="cta-note">Gratis activatie · Werkt op iPhone & Android · Direct actief</p>
   <div class="stats">
     <div class="stat"><div class="stat-n">190+</div><div class="stat-l">landen</div></div>
     <div class="stat"><div class="stat-n">2 min</div><div class="stat-l">activatie</div></div>
     <div class="stat"><div class="stat-n">€0</div><div class="stat-l">simkaart nodig</div></div>
-    <div class="stat"><div class="stat-n">20%</div><div class="stat-l">goedkoper dan roaming</div></div>
+    <div class="stat"><div class="stat-n">80%</div><div class="stat-l">goedkoper</div></div>
   </div>
 </div>
 
 <section>
-  <h2 class="sec-title">Waarom een <span>eSIM</span>?</h2>
+  <p class="sec-label">Waarom eSIM</p>
+  <h2 class="sec-title">Alles wat je nodig hebt op reis</h2>
+  <p class="sec-sub">Geen simkaartwinkel. Geen verlies van je Nederlandse nummer. Gewoon internet.</p>
   <div class="cards">
     <div class="card">
       <div class="card-icon">⚡</div>
       <h3>Direct actief</h3>
-      <p>Koop je plan, scan de QR code, en je hebt internet. Geen rij bij de lokale telefoonwinkel.</p>
+      <p>Koop je plan, scan de QR code, en je hebt internet. Nog voor je de gate uit bent.</p>
     </div>
     <div class="card">
       <div class="card-icon">💸</div>
       <h3>Tot 80% goedkoper</h3>
-      <p>Roamingkosten van je Nederlandse provider zijn belachelijk duur. Een eSIM kost een fractie.</p>
+      <p>KPN vraagt €7,50 per dag. Een eSIM voor Thailand kost €6 voor een week.</p>
     </div>
     <div class="card">
       <div class="card-icon">🌍</div>
@@ -82,82 +118,87 @@
     <div class="card">
       <div class="card-icon">📱</div>
       <h3>Houdt je eigen nummer</h3>
-      <p>Je Nederlandse nummer blijft actief voor WhatsApp en bellen. De eSIM regelt alleen je data.</p>
+      <p>Je Nederlandse nummer blijft actief voor WhatsApp. De eSIM regelt alleen je data.</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2 class="sec-title">Hoe het <span>werkt</span></h2>
-  <div class="steps">
+  <p class="sec-label">Hoe het werkt</p>
+  <h2 class="sec-title">Klaar in 4 stappen</h2>
+  <p class="sec-sub">Thuis regelen. Op bestemming genieten.</p>
+  <div class="steps-wrap">
     <div class="step">
       <div class="step-n">1</div>
-      <div class="step-body">
+      <div>
         <h3>Kies je land of regio</h3>
-        <p>Selecteer het land of de regio waar je naartoe gaat. Regionale plannen dekken meerdere landen tegelijk — ideaal als je door meerdere landen reist.</p>
+        <p>Selecteer je bestemming. Regionale plannen dekken meerdere landen tegelijk.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">2</div>
-      <div class="step-body">
+      <div>
         <h3>Koop je databundel</h3>
-        <p>Kies hoeveel data je nodig hebt. Vanaf een paar euro. Betaal gewoon met je creditcard of iDEAL.</p>
+        <p>Vanaf een paar euro. Betaal met creditcard of PayPal.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">3</div>
-      <div class="step-body">
+      <div>
         <h3>Scan de QR code</h3>
-        <p>Je krijgt een QR code per mail. Scan hem in je telefooninstellingen. De eSIM is binnen 2 minuten geïnstalleerd.</p>
+        <p>Je krijgt een QR code per mail. Scan hem in je telefooninstellingen. Klaar in 2 minuten.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">4</div>
-      <div class="step-body">
+      <div>
         <h3>Activeer bij aankomst</h3>
-        <p>Zet de eSIM aan zodra je landt. Meteen verbinding. Geen zoektocht naar een simkaartwinkel.</p>
+        <p>Zet de eSIM aan zodra je landt. Meteen verbinding. Geen zoektocht naar een winkel.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2 class="sec-title">eSIM vs <span>gewone simkaart</span></h2>
-  <div class="vs">
-    <div class="vs-col">
-      <h3>eSIM ✓</h3>
-      <ul>
-        <li>Direct online kopen</li>
-        <li>Geen fysieke kaart nodig</li>
-        <li>Houdt je NL nummer</li>
-        <li>Meerdere landen, één eSIM</li>
-        <li>Geen rij bij de winkel</li>
-        <li>Kopen voor vertrek</li>
-      </ul>
-    </div>
-    <div class="vs-col bad">
-      <h3>Lokale simkaart ✗</h3>
-      <ul>
-        <li>Zoeken naar een winkel</li>
-        <li>Verliest je NL nummer</li>
-        <li>Per land opnieuw kopen</li>
-        <li>Taalbarrière in de winkel</li>
-        <li>Kwijtraken of beschadigen</li>
-        <li>Wachten op activatie</li>
-      </ul>
+<div class="vs-section">
+  <div class="vs-inner">
+    <p class="sec-label" style="text-align:center">Vergelijking</p>
+    <h2 class="sec-title">eSIM vs lokale simkaart</h2>
+    <div class="vs">
+      <div class="vs-col good">
+        <h3>eSIM ✓</h3>
+        <ul>
+          <li>Direct online kopen</li>
+          <li>Geen fysieke kaart nodig</li>
+          <li>Houdt je NL nummer</li>
+          <li>Meerdere landen, één eSIM</li>
+          <li>Geen rij bij de winkel</li>
+          <li>Kopen voor vertrek</li>
+        </ul>
+      </div>
+      <div class="vs-col bad">
+        <h3>Lokale simkaart ✗</h3>
+        <ul>
+          <li>Winkel zoeken bij aankomst</li>
+          <li>Je NL nummer kwijt</li>
+          <li>Per land opnieuw kopen</li>
+          <li>Taalbarrière in de winkel</li>
+          <li>Kwijtraken of beschadigen</li>
+          <li>Uren verloren tijd</li>
+        </ul>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
 <div class="cta-section">
   <h2>Klaar om te gaan?</h2>
-  <p style="color:#888;margin-bottom:2rem;font-size:1rem">Honderden backpackers gingen je voor. Activeer in 2 minuten.</p>
-  <a class="cta" href="https://breezesim.com?sca_ref=10983613.HTJ7KGVIfO" target="_blank">Bekijk plannen & prijzen →</a>
-  <p style="font-size:12px;color:#444;margin-top:12px">Werkt op iPhone XS of nieuwer · Samsung S20+ · Google Pixel 3+</p>
+  <p>Activeer je eSIM vandaag nog. In 2 minuten geregeld.</p>
+  <a class="cta-white" href="https://breezesim.com?sca_ref=10983613.HTJ7KGVIfO" target="_blank">Bekijk plannen & prijzen →</a>
+  <p class="cta-section-note">Werkt op iPhone XS of nieuwer · Samsung S20+ · Google Pixel 3+</p>
 </div>
 
 <footer>
-  <p>Vragen? Stuur een berichtje via Instagram.</p>
+  <p>Vragen? Stuur een DM via Instagram.</p>
   <p style="margin-top:8px">Deze pagina bevat affiliate links. Als je via deze link koopt, ontvangen wij een kleine commissie — zonder extra kosten voor jou.</p>
 </footer>
 
