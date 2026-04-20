@@ -25,34 +25,49 @@
   .stat:last-child{border-right:none}
   .stat-n{font-size:1.6rem;font-weight:800;color:#00b87a}
   .stat-l{font-size:11px;color:#4a6b5e;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+
   .country-section{background:#fff;padding:4rem 1.5rem;border-top:1px solid #e8f3ee}
-  .country-inner{max-width:760px;margin:0 auto;text-align:center}
+  .country-inner{max-width:860px;margin:0 auto;text-align:center}
   .sec-label{font-size:12px;font-weight:700;color:#00b87a;text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem}
   .sec-title{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;color:#0f2920}
-  .sec-sub{color:#4a6b5e;font-size:.95rem;margin-bottom:2rem}
-  .country-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;margin-bottom:1.5rem}
-  .country-btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:1rem .75rem;background:#f7f9f8;border:1.5px solid #e0ede8;border-radius:12px;cursor:pointer;transition:all .15s;font-family:'Segoe UI',system-ui,sans-serif}
+  .sec-sub{color:#4a6b5e;font-size:.95rem;margin-bottom:1.5rem}
+
+  .search-wrap{position:relative;max-width:340px;margin:0 auto 1.5rem}
+  .search-wrap input{width:100%;padding:11px 16px 11px 40px;border:1.5px solid #e0ede8;border-radius:10px;font-size:14px;font-family:'Segoe UI',system-ui,sans-serif;color:#0f2920;background:#f7f9f8;outline:none}
+  .search-wrap input:focus{border-color:#00b87a;background:#fff}
+  .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#7a9e91;font-size:16px;pointer-events:none}
+
+  .country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.6rem;margin-bottom:1.25rem}
+  .country-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:.85rem .5rem;background:#f7f9f8;border:1.5px solid #e0ede8;border-radius:12px;cursor:pointer;transition:all .15s;font-family:'Segoe UI',system-ui,sans-serif;width:100%}
   .country-btn:hover{border-color:#00b87a;background:#f0faf5}
   .country-btn.selected{border-color:#00b87a;background:#e6f7f1;border-width:2px}
-  .country-flag{font-size:1.8rem;line-height:1}
-  .country-name{font-size:13px;font-weight:600;color:#0f2920}
+  .country-btn.hidden{display:none}
+  .country-flag{font-size:1.6rem;line-height:1}
+  .country-name{font-size:12px;font-weight:600;color:#0f2920;text-align:center;line-height:1.3}
   .country-price{font-size:11px;color:#00895a;font-weight:500}
-  .go-btn{display:inline-block;background:#00b87a;color:#fff;font-weight:700;font-size:1rem;padding:16px 48px;border-radius:10px;cursor:pointer;border:none;font-family:'Segoe UI',system-ui,sans-serif;transition:background .2s;opacity:.4;pointer-events:none}
+
+  .show-more-btn{background:transparent;border:1.5px solid #00b87a;color:#00b87a;font-weight:600;font-size:13px;padding:10px 24px;border-radius:8px;cursor:pointer;font-family:'Segoe UI',system-ui,sans-serif;margin-bottom:1.25rem;transition:all .15s}
+  .show-more-btn:hover{background:#e6f7f1}
+
+  .go-btn{display:inline-block;background:#00b87a;color:#fff;font-weight:700;font-size:1rem;padding:14px 48px;border-radius:10px;cursor:pointer;border:none;font-family:'Segoe UI',system-ui,sans-serif;transition:background .2s;opacity:.35;pointer-events:none}
   .go-btn.active{opacity:1;pointer-events:all}
   .go-btn.active:hover{background:#009e6a}
   .select-hint{font-size:13px;color:#7a9e91;margin-top:.75rem}
+
   section{padding:4rem 1.5rem;max-width:860px;margin:0 auto}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
   .card{background:#fff;border:1px solid #ddeee7;border-radius:14px;padding:1.5rem}
   .card-icon{width:40px;height:40px;background:#e6f7f1;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.2rem}
   .card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:#0f2920}
   .card p{font-size:.875rem;color:#4a6b5e;line-height:1.5}
+
   .steps-wrap{background:#fff;border-radius:16px;border:1px solid #ddeee7;padding:2rem}
   .step{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid #f0f7f4}
   .step:last-child{border-bottom:none;padding-bottom:0}
   .step-n{background:#00b87a;color:#fff;font-weight:800;font-size:.875rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
   .step h3{font-size:.95rem;font-weight:700;margin-bottom:3px;color:#0f2920}
   .step p{font-size:.875rem;color:#4a6b5e}
+
   .vs-section{background:#f7f9f8;padding:4rem 1.5rem}
   .vs-inner{max-width:720px;margin:0 auto}
   .vs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
@@ -63,14 +78,16 @@
   .vs-col.good li::before{content:"✓";position:absolute;left:0;color:#00b87a;font-weight:700}
   .vs-col.bad li::before{content:"✗";position:absolute;left:0;color:#e05555}
   .vs-col.bad li{color:#9ab0a8}
+
   .cta-section{background:#00b87a;padding:5rem 1.5rem;text-align:center}
   .cta-section h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;color:#fff;margin-bottom:.75rem}
   .cta-section p{color:#b3ede0;margin-bottom:2rem;font-size:1rem}
   .cta-white{display:inline-block;background:#fff;color:#00b87a;font-weight:700;font-size:1rem;padding:16px 40px;border-radius:10px;transition:opacity .2s}
   .cta-white:hover{opacity:.9}
   .cta-section-note{font-size:12px;color:#b3ede0;margin-top:10px}
+
   footer{background:#fff;border-top:1px solid #e0ede8;padding:2rem 1.5rem;text-align:center;font-size:12px;color:#7a9e91}
-  @media(max-width:480px){.vs{grid-template-columns:1fr}nav .nav-cta{display:none}.country-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:480px){.vs{grid-template-columns:1fr}nav .nav-cta{display:none}}
 </style>
 </head>
 <body>
@@ -99,44 +116,17 @@
     <p class="sec-label">Waar ga je naartoe?</p>
     <h2 class="sec-title">Kies je bestemming</h2>
     <p class="sec-sub">Selecteer een land en ga direct naar het juiste eSIM plan.</p>
-    <div class="country-grid">
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_th_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇹🇭</span><span class="country-name">Thailand</span><span class="country-price">v.a. €4</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_id_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇮🇩</span><span class="country-name">Indonesië</span><span class="country-price">v.a. €4</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_vn_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇻🇳</span><span class="country-name">Vietnam</span><span class="country-price">v.a. €4</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_my_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇲🇾</span><span class="country-name">Maleisië</span><span class="country-price">v.a. €4</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_ma_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇲🇦</span><span class="country-name">Marokko</span><span class="country-price">v.a. €5</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_co_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇨🇴</span><span class="country-name">Colombia</span><span class="country-price">v.a. €5</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_jp_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇯🇵</span><span class="country-name">Japan</span><span class="country-price">v.a. €5</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_za_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇿🇦</span><span class="country-name">Zuid-Afrika</span><span class="country-price">v.a. €5</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_au_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇦🇺</span><span class="country-name">Australië</span><span class="country-price">v.a. €5</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_ph_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇵🇭</span><span class="country-name">Filipijnen</span><span class="country-price">v.a. €4</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_pe_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🇵🇪</span><span class="country-name">Peru</span><span class="country-price">v.a. €5</span>
-      </button>
-      <button class="country-btn" onclick="selectCountry(this)" data-url="https://breezesim.com/products/esimg_ras_v2?sca_ref=10983613.HTj7KGV1fO">
-        <span class="country-flag">🌏</span><span class="country-name">Azië (multi)</span><span class="country-price">v.a. €6</span>
-      </button>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Zoek een land..." oninput="filterCountries(this.value)">
     </div>
+
+    <div class="country-grid" id="grid"></div>
+
+    <button class="show-more-btn" id="show-more-btn" onclick="showMore()">Toon alle landen ▾</button>
+
+    <br>
     <button class="go-btn" id="go-btn" onclick="goToCountry()">Bekijk plannen →</button>
     <p class="select-hint" id="hint">Kies een land hierboven</p>
   </div>
@@ -159,7 +149,7 @@
   <h2 class="sec-title" style="text-align:center">Klaar in 4 stappen</h2>
   <p style="text-align:center;color:#4a6b5e;font-size:.95rem;margin-bottom:2rem">Thuis regelen. Op bestemming genieten.</p>
   <div class="steps-wrap">
-    <div class="step"><div class="step-n">1</div><div><h3>Kies je land</h3><p>Selecteer je bestemming hierboven. Regionale plannen dekken meerdere landen.</p></div></div>
+    <div class="step"><div class="step-n">1</div><div><h3>Kies je land</h3><p>Selecteer je bestemming hierboven. Regionale plannen dekken meerdere landen tegelijk.</p></div></div>
     <div class="step"><div class="step-n">2</div><div><h3>Koop je databundel</h3><p>Vanaf een paar euro. Betaal met creditcard of PayPal.</p></div></div>
     <div class="step"><div class="step-n">3</div><div><h3>Scan de QR code</h3><p>Je krijgt een QR code per mail. Scan hem in je telefooninstellingen. Klaar in 2 minuten.</p></div></div>
     <div class="step"><div class="step-n">4</div><div><h3>Activeer bij aankomst</h3><p>Zet de eSIM aan zodra je landt. Meteen verbinding. Geen zoektocht naar een winkel.</p></div></div>
@@ -190,7 +180,129 @@
 </footer>
 
 <script>
+var REF='?sca_ref=10983613.HTj7KGV1fO';
+var BASE='https://breezesim.com/products/';
+
+var all=[
+  {f:'🇹🇭',n:'Thailand',s:'esim-thailand'},
+  {f:'🇮🇩',n:'Indonesië',s:'esimg_id_v2'},
+  {f:'🇻🇳',n:'Vietnam',s:'esim-vietnam'},
+  {f:'🇲🇾',n:'Maleisië',s:'esimg_my_v2'},
+  {f:'🇲🇦',n:'Marokko',s:'esim-morocco'},
+  {f:'🇨🇴',n:'Colombia',s:'esim-colombia'},
+  {f:'🇯🇵',n:'Japan',s:'esim-japan'},
+  {f:'🇦🇺',n:'Australië',s:'esim-australia'},
+  {f:'🇵🇭',n:'Filipijnen',s:'esimg_ph_v2'},
+  {f:'🇵🇪',n:'Peru',s:'esim-peru'},
+  {f:'🇺🇸',n:'USA',s:'esim-usa'},
+  {f:'🇨🇦',n:'Canada',s:'esim-canada'},
+  {f:'🌍',n:'Europa',s:'esim-europe'},
+  {f:'🌍',n:'Europa Lite',s:'esim-europe-lite'},
+  {f:'🌐',n:'Europa + USA',s:'esim-europe-and-usa'},
+  {f:'🇬🇧',n:'Verenigd Koninkrijk',s:'esim-united-kingdom'},
+  {f:'🇹🇷',n:'Turkije',s:'esim-turkey'},
+  {f:'🇦🇪',n:'Dubai / UAE',s:'esim-united-arab-emirates'},
+  {f:'🇲🇽',n:'Mexico',s:'esim-mexico'},
+  {f:'🇧🇷',n:'Brazilië',s:'esim-brazil'},
+  {f:'🇦🇷',n:'Argentinië',s:'esim-argentina'},
+  {f:'🌎',n:'Zuid-Amerika',s:'esim-south-america'},
+  {f:'🇿🇦',n:'Zuid-Afrika',s:'esim-south-africa'},
+  {f:'🇮🇳',n:'India',s:'esim-india'},
+  {f:'🇰🇷',n:'Zuid-Korea',s:'esim-south-korea'},
+  {f:'🇨🇳',n:'China',s:'esim-china'},
+  {f:'🇭🇰',n:'Hong Kong',s:'esim-hong-kong'},
+  {f:'🇸🇬',n:'Singapore',s:'esimg_sg_v2'},
+  {f:'🇹🇼',n:'Taiwan',s:'esim-taiwan'},
+  {f:'🇸🇦',n:'Saudi-Arabië',s:'esim-saudi-arabia'},
+  {f:'🇶🇦',n:'Qatar',s:'esimg_qa_v2'},
+  {f:'🇴🇲',n:'Oman',s:'esimg_om_v2'},
+  {f:'🇮🇱',n:'Israël',s:'esimg_il_v2'},
+  {f:'🇨🇭',n:'Zwitserland',s:'esim-switzerland'},
+  {f:'🇳🇿',n:'Nieuw-Zeeland',s:'esimg_nz_v2'},
+  {f:'🇪🇬',n:'Egypte',s:'esim-egypt'},
+  {f:'🇹🇳',n:'Tunesië',s:'esim-tunisia'},
+  {f:'🇰🇪',n:'Kenia',s:'esimg_ke_v2'},
+  {f:'🇹🇿',n:'Tanzania',s:'esim-tanzania'},
+  {f:'🇳🇬',n:'Nigeria',s:'esimg_ng_v2'},
+  {f:'🇳🇦',n:'Namibië',s:'esimg_na_v2'},
+  {f:'🇲🇺',n:'Mauritius',s:'esimg_mu_v2'},
+  {f:'🇨🇻',n:'Kaapverdië',s:'esim-cape-verde'},
+  {f:'🇨🇷',n:'Costa Rica',s:'esim-costa-rica'},
+  {f:'🇵🇦',n:'Panama',s:'esim-panama'},
+  {f:'🇩🇴',n:'Dom. Republiek',s:'esim-dominican-republic'},
+  {f:'🇯🇲',n:'Jamaica',s:'esimg_jm_v2'},
+  {f:'🇧🇸',n:'Bahamas',s:'esim-bahamas'},
+  {f:'🇧🇧',n:'Barbados',s:'esimg_bb_v2'},
+  {f:'🇱🇨',n:'Saint Lucia',s:'esim-saint-lucia'},
+  {f:'🇬🇩',n:'Grenada',s:'esimg_gd_v2'},
+  {f:'🇦🇬',n:'Antigua',s:'esimg_ag_v2'},
+  {f:'🇻🇬',n:'Britse Maagdeneil.',s:'esimg_vg_v2'},
+  {f:'🇰🇾',n:'Kaaimaneilanden',s:'esimg_ky_v2'},
+  {f:'🇹🇨',n:'Turks & Caicos',s:'esimg_tc_v2'},
+  {f:'🇹🇹',n:'Trinidad & Tobago',s:'esimg_tt_v2'},
+  {f:'🇸🇷',n:'Suriname',s:'esimg_sr_v2'},
+  {f:'🇺🇾',n:'Uruguay',s:'esimg_uy_v2'},
+  {f:'🇨🇱',n:'Chili',s:'esimg_cl_v2'},
+  {f:'🇪🇨',n:'Ecuador',s:'esimg_ec_v2'},
+  {f:'🇸🇻',n:'El Salvador',s:'esimg_sv_v2'},
+  {f:'🇬🇹',n:'Guatemala',s:'esimg_gt_v2'},
+  {f:'🇱🇰',n:'Sri Lanka',s:'esimg_lk_v2'},
+  {f:'🇵🇰',n:'Pakistan',s:'esimg_pk_v2'},
+  {f:'🇷🇺',n:'Rusland',s:'esimg_ru_v2'},
+  {f:'🇭🇺',n:'Hongarije',s:'esim-hungary'},
+  {f:'🇷🇴',n:'Roemenië',s:'esimg_ro_v2'},
+  {f:'🇧🇬',n:'Bulgarije',s:'esimg_bg_v2'},
+  {f:'🇷🇸',n:'Servië',s:'esimg_rs_v2'},
+  {f:'🇧🇦',n:'Bosnië',s:'esimg_ba_v2'},
+  {f:'🇲🇪',n:'Montenegro',s:'esimg_me_v2'},
+  {f:'🇦🇱',n:'Albanië',s:'esimg_al_v2'},
+  {f:'🇲🇹',n:'Malta',s:'esimg_mt_v2'},
+  {f:'🇨🇾',n:'Cyprus',s:'esimg_cy_v2'},
+  {f:'🇮🇸',n:'IJsland',s:'esimg_is_v2'},
+  {f:'🇬🇬',n:'Guernsey',s:'esimg_gg_v2'},
+  {f:'🇺🇸',n:'Hawaii',s:'esim-hawaii'},
+  {f:'🌎',n:'Caribisch gebied',s:'esimg_rca_v2'},
+  {f:'🇳🇨',n:'NL Antillen',s:'esim-netherlands-antilles'},
+  {f:'🇨🇾',n:'Noord-Cyprus',s:'esim-northern-cyprus'},
+  {f:'🏝️',n:'Kanaarseeil.',s:'esimg_ic_v2'},
+];
+
+var SHOW_INIT=20;
+var showAll=false;
 var selectedUrl=null;
+
+function url(s){return BASE+s+REF;}
+
+function render(list,showAllItems){
+  var grid=document.getElementById('grid');
+  grid.innerHTML='';
+  list.forEach(function(c,i){
+    var btn=document.createElement('button');
+    btn.className='country-btn'+((!showAllItems&&i>=SHOW_INIT)?' hidden':'');
+    btn.setAttribute('data-url',url(c.s));
+    btn.setAttribute('data-name',c.n.toLowerCase());
+    btn.innerHTML='<span class="country-flag">'+c.f+'</span><span class="country-name">'+c.n+'</span>';
+    btn.onclick=function(){selectCountry(this);};
+    grid.appendChild(btn);
+  });
+  var btn=document.getElementById('show-more-btn');
+  if(showAllItems||list.length<=SHOW_INIT){btn.style.display='none';}
+  else{btn.style.display='inline-block';btn.textContent='Toon alle '+list.length+' landen ▾';}
+}
+
+function showMore(){
+  showAll=true;
+  document.querySelectorAll('.country-btn.hidden').forEach(function(b){b.classList.remove('hidden');});
+  document.getElementById('show-more-btn').style.display='none';
+}
+
+function filterCountries(q){
+  var term=q.toLowerCase().trim();
+  if(!term){render(all,showAll);return;}
+  var filtered=all.filter(function(c){return c.n.toLowerCase().includes(term);});
+  render(filtered,true);
+}
+
 function selectCountry(btn){
   document.querySelectorAll('.country-btn').forEach(function(b){b.classList.remove('selected');});
   btn.classList.add('selected');
@@ -198,7 +310,10 @@ function selectCountry(btn){
   document.getElementById('go-btn').classList.add('active');
   document.getElementById('hint').textContent='Klik op de knop om naar het plan te gaan';
 }
+
 function goToCountry(){if(selectedUrl){window.open(selectedUrl,'_blank');}}
+
+render(all,false);
 </script>
 </body>
 </html>
