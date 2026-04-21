@@ -180,8 +180,12 @@
 </footer>
 
 <script>
-var REF='?sca_ref=10983613.HTj7KGV1fO';
+var REF='sca_ref=10983613.HTj7KGV1fO';
 var BASE='https://breezesim.com/products/';
+
+function url(s){
+  return BASE+s+(s.indexOf('?')>-1?'&':'?')+REF;
+}
 
 var all=[
   {f:'🇹🇭',n:'Thailand',s:'esim-thailand'},
